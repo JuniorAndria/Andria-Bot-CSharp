@@ -20,8 +20,10 @@ namespace DatabaseManager.Controllers
         }
         private static SQLiteConnection DbConnection()
         {
-            SQLiteConnectionStringBuilder connectionStringBuilder = new SQLiteConnectionStringBuilder();
-            connectionStringBuilder.DataSource = getArquive();
+            SQLiteConnectionStringBuilder connectionStringBuilder = new SQLiteConnectionStringBuilder
+            {
+                DataSource = getArquive()
+            };
             return new SQLiteConnection(connectionStringBuilder.ConnectionString);
         }
         public static SQLiteConnection getDb()

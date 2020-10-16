@@ -125,7 +125,7 @@ namespace DSPlus.Examples
                 var ffout = ffmpeg.StandardOutput.BaseStream;
 
                 // let's buffer ffmpeg output
-                using (var ms = new MemoryStream())
+                using (MemoryStream ms = new MemoryStream())
                 {
                     await ffout.CopyToAsync(ms);
                     ms.Position = 0;
